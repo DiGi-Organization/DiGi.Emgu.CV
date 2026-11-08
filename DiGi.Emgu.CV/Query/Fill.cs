@@ -68,7 +68,7 @@ namespace DiGi.Emgu.CV
             mask.SetTo(new MCvScalar(0)); // Initialize the mask as black
 
             // Convert the polygon points to a VectorOfPoint
-            using (var vectorOfPoint = new VectorOfPoint(points))
+            using (VectorOfPoint vectorOfPoint = new(points))
             {
                 // Fill the polygon with white (255) on the mask
                 CvInvoke.FillConvexPoly(mask, vectorOfPoint, new MCvScalar(255));
